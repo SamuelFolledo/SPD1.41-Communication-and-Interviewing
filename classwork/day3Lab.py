@@ -1,6 +1,7 @@
 
 # find k largest number in array, return in decreasing
 # [3,4,5,8,6,9];
+# Bubble sort
 def sort_descending(arr):
     temp = 0 #store current num
     isSorted = False
