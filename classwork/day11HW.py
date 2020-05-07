@@ -52,8 +52,8 @@ def remove_elements(head, val):
     while head: #handle head and next having the val
         if head.val == val:
             head = head.next
-        # else:
-        #     break
+        else:
+            break
 
     current = head
     prev = None
