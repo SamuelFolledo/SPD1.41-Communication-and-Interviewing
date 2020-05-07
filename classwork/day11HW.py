@@ -30,3 +30,58 @@ def merge(nums1: [int], m: int, nums2: [int], n: int) -> None:
     return result
 
 print(merge([1,2,4,4], 4, [-1,2,3,5], 3))
+
+
+
+
+
+
+#HW2: https://leetcode.com/problems/remove-linked-list-elements/
+class ListNode(object):
+    def __init__(self, val=0):
+        self.val = val
+        self.next = None
+
+
+def remove_elements(head, val):
+    '''Remove all elements from a linked list of integers that have value val.
+    Example:
+    Input:  1->2->6->3->4->5->6, val = 6
+    Output: 1->2->3->4->5
+    '''
+    while head: #handle head and next having the val
+        if head.val == val:
+            head = head.next
+        # else:
+        #     break
+
+    current = head
+    prev = None
+
+    while current: #loop til current is None
+        if current.val == val: #if current has val, point prev's next to current.next
+            prev.next = current.next
+        prev = current
+        current = current.next
+
+    return head
+
+# node = ListNode(6)
+# node.next = ListNode(6)
+# node.next.next = ListNode(2)
+# node.next.next.next = ListNode(3)
+# node.next.next.next.next = ListNode(4)
+# node.next.next.next.next.next = ListNode(5)
+# node.next.next.next.next.next.next = ListNode(6)
+
+# node = remove_elements(node, 6)
+
+node = ListNode(1)
+node.next = ListNode(1)
+node.next.next = ListNode(2)
+node.next.next.next = ListNode(1)
+
+node = remove_elements(node, 1)
+while node:
+    print(node.val)
+    node = node.next
