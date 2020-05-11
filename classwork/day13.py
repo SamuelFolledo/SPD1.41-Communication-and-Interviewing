@@ -10,5 +10,4 @@ def remove_elements(arr, val, index = 0):
     else:
         return remove_elements(arr, val, index+1)
         
-
 print(remove_elements([1, 1, 1, 1, 2, 1, 3, 1, 1, 4, 5, 1, 6], 1))
